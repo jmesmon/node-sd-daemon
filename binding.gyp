@@ -1,13 +1,10 @@
 {
-    "variables": {
-        "NODEJS": "<!(['sh', '-c', 'which nodejs || which node'])"
-    },
     "targets": [
         {
             "target_name": "daemon",
             "sources": [ "src/daemon.cc" ],
             "include_dirs": [
-                "<!(<(NODEJS) -e \"require('nan')\")"
+                "<!(node -e \"require('nan')\")"
             ],
             "libraries": [
                 "<!@(['sh', '-c', 'pkg-config --silence-errors --libs-only-l libsystemd || pkg-config --silence-errors --libs-only-l libsystemd-daemon'])"
