@@ -13,7 +13,7 @@
     },
 
     "dependencies": {
-        "nan": "*"
+        "nan": "1.7"
     },
 
     "keywords": ["systemd", "daemon"],
